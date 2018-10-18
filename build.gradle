@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+group 'all-about-files'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.jacoco', name: 'jacoco-maven-plugin', version: '0.8.1'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.18'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.8.47'
+}
+
+check.dependsOn jacocoTestCoverageVerification
+check.dependsOn jacocoTestReport
+
+jacocoTestReport {
+    executionData(test)
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'CLASS'
+            limit {
+                minimum = 0.75
+            }
+        }
+    }
+    executionData(test)
+}
