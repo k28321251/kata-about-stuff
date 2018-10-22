@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kata.stage4.ReadTextFileTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-18T02:54:35" hostname="NAIN2704LP3444Z" time="0.01">
+  <properties/>
+  <testcase name="shouldReadTheTextFileInTheResourcesFolder" classname="com.kata.stage4.ReadTextFileTest" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
